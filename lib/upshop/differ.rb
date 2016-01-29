@@ -3,23 +3,22 @@ require "rugged"
 
 module Upshop
   module Differ
-    DifferResult = Struct.new(:status, :message, :files)
+    DifferResult = Struct.new(:status, :message, :deltas)
     ERROR_STATUS = "error"
     OK_STATUS = "ok"
 
     class << self
       def get_changed_files
-        result = DifferResult.new
+        @result = DifferResult.new
         begin
           discover_repository
           get_last_deployed_commit
-          # if successful, run a diff and return a list of changed files
-          # else return an explanation of why diff could not be calculated
+          determine_diff
         rescue DifferError => e
-          result.status = ERROR_STATUS
-          result.message = e.message
+          @result.status = ERROR_STATUS
+          @result.message = e.message
         end
-        result
+        @result
       end
 
       private
@@ -48,10 +47,22 @@ module Upshop
       def extract_last_deployed_commit_from(file)
         begin
           @commit = file[:deploys][0].fetch(:commit)
-          raise(KeyError) unless @commit
-        rescue KeyError, NoMethodError
-          raise DifferError, "Unable to parse last deployed commit from deploy_file"
+          raise(DifferError) unless @repo.exists?(@commit)
+        rescue KeyError, NoMethodError, TypeError, DifferError
+          raise DifferError, "No valid last deployed commit found in deploy_file"
         end
+      end
+
+      def determine_diff
+        head = @repo.head.target
+        last_deploy = @repo.lookup(@commit)
+        diff = last_deploy.diff(head)
+        deltas = diff.deltas.map do |delta|
+          { path: delta.new_file[:path], status: delta.status }
+        end
+
+        @result.status = OK_STATUS
+        @result.deltas = deltas
       end
     end
   end
