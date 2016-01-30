@@ -5,7 +5,7 @@ DIFFER = Upshop::Differ
 RESULT = Upshop::Differ::DifferResult
 
 RSpec.describe Upshop::Differ do
-  describe "get_changed_files" do
+  describe "get_delta" do
 
     describe "happy path" do
       example do
@@ -43,7 +43,7 @@ RSpec.describe Upshop::Differ do
         ]
         expected_response = RESULT.new("ok", nil, deltas)
 
-        expect(DIFFER.get_changed_files).to eq expected_response
+        expect(DIFFER.get_delta).to eq expected_response
       end
     end
 
@@ -55,7 +55,7 @@ RSpec.describe Upshop::Differ do
             expected_response = RESULT.new("error",
                                            "Unable to find git repository in current folder")
 
-            expect(DIFFER.get_changed_files).to eq expected_response
+            expect(DIFFER.get_delta).to eq expected_response
           end
         end
       end
@@ -70,7 +70,7 @@ RSpec.describe Upshop::Differ do
               expected_response = RESULT.new("error",
                                              "Unable to find deploy_file")
 
-              expect(DIFFER.get_changed_files).to eq expected_response
+              expect(DIFFER.get_delta).to eq expected_response
             end
           end
 
@@ -80,7 +80,7 @@ RSpec.describe Upshop::Differ do
               expected_response = RESULT.new("error",
                                              "No valid last deployed commit found in deploy_file")
 
-              expect(DIFFER.get_changed_files).to eq expected_response
+              expect(DIFFER.get_delta).to eq expected_response
             end
           end
 
@@ -91,7 +91,7 @@ RSpec.describe Upshop::Differ do
               expected_response = RESULT.new("error",
                                              "No valid last deployed commit found in deploy_file")
 
-              expect(DIFFER.get_changed_files).to eq expected_response
+              expect(DIFFER.get_delta).to eq expected_response
             end
           end
 
@@ -106,7 +106,7 @@ RSpec.describe Upshop::Differ do
               expected_response = RESULT.new("error",
                                              "No valid last deployed commit found in deploy_file")
 
-              expect(DIFFER.get_changed_files).to eq expected_response
+              expect(DIFFER.get_delta).to eq expected_response
             end
           end
         end

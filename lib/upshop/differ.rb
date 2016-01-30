@@ -8,7 +8,7 @@ module Upshop
     OK_STATUS = "ok"
 
     class << self
-      def get_changed_files
+      def get_delta
         @result = DifferResult.new
         begin
           discover_repository
