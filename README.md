@@ -1,6 +1,7 @@
 # Upshop
 
 [![Build Status](https://travis-ci.org/NikitaAvvakumov/upshop.svg?branch=master)](https://travis-ci.org/NikitaAvvakumov/upshop)
+[![Coverage Status](https://coveralls.io/repos/github/NikitaAvvakumov/upshop/badge.svg?branch=master)](https://coveralls.io/github/NikitaAvvakumov/upshop?branch=master)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upshop`. To experiment with that code, run `bin/console` for an interactive prompt.
 
