@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/NikitaAvvakumov/upshop.svg?branch=master)](https://travis-ci.org/NikitaAvvakumov/upshop)
 [![Coverage Status](https://coveralls.io/repos/github/NikitaAvvakumov/upshop/badge.svg?branch=master)](https://coveralls.io/github/NikitaAvvakumov/upshop?branch=master)
+[![Gem Version](https://badge.fury.io/rb/upshop.svg)](https://badge.fury.io/rb/upshop)
 [![Inline docs](http://inch-ci.org/github/nikitaavvakumov/upshop.svg?branch=master)](http://inch-ci.org/github/nikitaavvakumov/upshop)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upshop`. To experiment with that code, run `bin/console` for an interactive prompt.
