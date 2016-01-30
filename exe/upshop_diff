@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'upshop'
+puts Upshop::Differ.get_delta
