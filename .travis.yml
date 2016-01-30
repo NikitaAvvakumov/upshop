@@ -13,3 +13,10 @@ script: bundle exec rake
 matrix:
   allow_failures:
     - rvm: ruby-head
+
+notifications:
+  email:
+    recipients:
+      - nikitaavvakumov@gmail.com
+    on_success: change
+    on_failure: always
