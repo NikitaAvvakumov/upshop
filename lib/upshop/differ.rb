@@ -38,7 +38,7 @@ module Upshop
 
       def get_deploy_file
         begin
-          deploy_file = YAML.load_file("deploy_file.yml")
+          YAML.load_file("deploy_file.yml")
         rescue Errno::ENOENT
           raise DifferError, "Unable to find deploy_file"
         end
