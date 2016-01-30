@@ -10,7 +10,11 @@ Gem::Specification.new do |spec|
   spec.email         = ["nikitaavvakumov@gmail.com"]
 
   spec.summary       = %q{Deploy git-versioned shop themes to Shopify}
-  spec.description   = %q{upshop tracks git commits of each theme deployment
+  spec.description   = %q{_THE GEM IS CURRENTLY IN DEVELOPMENT, IS MISSING LARGE
+                          CHUNKS OF CORE FUNCTIONALITY, AND WILL MOST CERTAINLY
+                          UNDERGO BREAKING CHANGES IN THE NEAR FUTURE. USE AT
+                          YOUR OWN RISK._
+                          upshop tracks git commits of each theme deployment
                           and performs differential deploys of changed files}
   spec.homepage      = "https://github.com/NikitaAvvakumov/upshop"
   spec.license       = "MIT"

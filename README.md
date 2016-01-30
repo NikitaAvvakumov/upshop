@@ -5,9 +5,11 @@
 [![Gem Version](https://badge.fury.io/rb/upshop.svg)](https://badge.fury.io/rb/upshop)
 [![Inline docs](http://inch-ci.org/github/nikitaavvakumov/upshop.svg?branch=master)](http://inch-ci.org/github/nikitaavvakumov/upshop)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upshop`. To experiment with that code, run `bin/console` for an interactive prompt.
+_THE GEM IS IN ACTIVE DEVELOPMENT, IS MISSING LARGE PARTS OF ITS CORE
+FUNCTIONALITY, AND WILL MOST CERTAINLY UNDERGO BREAKING CHANGES IN THE IMMEDIATE
+FUTURE. USE AT YOUR OWN RISK_
 
-TODO: Delete this and the text above, and describe your gem
+upshop makes it easy to deploy version-controlled themes to Shopify stores.
 
 ## Installation
 
@@ -27,7 +29,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+COMING SOON...
 
 ## Development
 
